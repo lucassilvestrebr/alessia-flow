@@ -27,7 +27,7 @@ function Nav({ onDemoClick, registerUrl }) {
     <div className={"nav-wrap " + (scrolled ? "scrolled" : "")}>
       <nav className="nav">
         <a className="brand" href="#">
-          <img src="uploads/VEROSS-ALESSIAFLOW-LOGO-165-x60-transp.svg" alt="AlessIA Flow" className="brand-logo" style={{ height: 44 }} />
+          <img src={window.__resources.logoTransp} alt="AlessIA Flow" className="brand-logo" style={{ height: 44 }} />
         </a>
         <div className="nav-links">
           <a href="#features">Recursos</a>
@@ -73,7 +73,7 @@ function Hero({ onDemoClick, registerUrl }) {
 
       <div className="hero-inner">
         <div className="hero-orb">
-          <img src="uploads/VEROSS-ALESSIAFLOW-SYMBOL-1000X1000-transp.svg" alt="AlessIA Flow Symbol" style={{ width: 44, height: 44, objectFit: "contain" }} />
+          <img src={window.__resources.symbolTransp} alt="AlessIA Flow Symbol" style={{ width: 44, height: 44, objectFit: "contain" }} />
         </div>
         <h1>
           Sua plataforma de prospecção<br />
@@ -332,7 +332,8 @@ function Showcase() {
     display: "flex", flexDirection: "column", gap: 2,
     minWidth: 200,
   };
-  const menuItem = (label, icon, active) => (
+
+  const MenuItem = ({ label, icon, active }) => (
     <div style={{
       display: "flex", alignItems: "center", gap: 10,
       padding: "8px 10px", borderRadius: 8,
@@ -362,13 +363,13 @@ function Showcase() {
         <div style={{ marginTop: 6, fontSize: 10, color: "#34d399" }}>✓ Safe Mode On</div>
       </div>
       <div style={{ fontSize: 10, color: "rgba(255,255,255,0.3)", textTransform: "uppercase", letterSpacing: "0.06em", padding: "6px 8px" }}>Menu</div>
-      {menuItem("Dashboard", "📊", activeItem === "Dashboard")}
-      {menuItem("Campaigns", "⚡", activeItem === "Campaigns")}
-      {menuItem("Inbox", "📥", activeItem === "Inbox")}
-      {menuItem("Accounts", "👤", activeItem === "Accounts")}
-      {menuItem("Settings", "⚙️", activeItem === "Settings")}
-      {menuItem("Advanced", "🔧", activeItem === "Advanced")}
-      {menuItem("Your Clients", "🏛️", activeItem === "Your Clients")}
+      <MenuItem label="Dashboard" icon="📊" active={activeItem === "Dashboard"} />
+      <MenuItem label="Campaigns" icon="⚡" active={activeItem === "Campaigns"} />
+      <MenuItem label="Inbox" icon="📥" active={activeItem === "Inbox"} />
+      <MenuItem label="Accounts" icon="👤" active={activeItem === "Accounts"} />
+      <MenuItem label="Settings" icon="⚙️" active={activeItem === "Settings"} />
+      <MenuItem label="Advanced" icon="🔧" active={activeItem === "Advanced"} />
+      <MenuItem label="Your Clients" icon="🏛️" active={activeItem === "Your Clients"} />
     </div>
   );
 
@@ -381,9 +382,9 @@ function Showcase() {
           <div style={{ width: 24, height: 24, borderRadius: "50%", background: "#4f46e5", display: "grid", placeItems: "center", color: "white", fontSize: 11, fontWeight: 700 }}>LS</div>
         </div>
       </div>
-      <div style={{ padding: "12px 20px", borderBottom: "1px solid #f0f0f0", display: "flex", gap: 8 }}>
+      <div style={{ padding: "12px 20px", borderBottom: "1px solid #f0f0f0", display: "flex", gap: 8, alignItems: "center" }}>
         {["Campaigns", "Prospects", "Lead list"].map((t, i) => (
-          <span key={i} style={{ padding: "6px 14px", fontSize: 12, fontWeight: 500, borderRadius: 6, color: i === 0 ? "#4f46e5" : "#888", borderBottom: i === 0 ? "2px solid #4f46e5" : "none", cursor: "pointer" }}>{t}</span>
+          <span key={i} style={{ padding: "6px 14px", fontSize: 12, fontWeight: 500, color: i === 0 ? "#4f46e5" : "#888", borderBottom: i === 0 ? "2px solid #4f46e5" : "none", cursor: "pointer" }}>{t}</span>
         ))}
         <div style={{ marginLeft: "auto", background: "#4f46e5", color: "white", fontSize: 11, fontWeight: 600, padding: "6px 14px", borderRadius: 8, cursor: "pointer" }}>Create Campaign →</div>
       </div>
@@ -470,7 +471,7 @@ function Showcase() {
             {["Interested", "Meeting Booked"].map((t, i) => <span key={i} style={{ fontSize: 10, padding: "2px 8px", border: "1px solid #d0d0d0", borderRadius: 4, color: "#555" }}>{t} ✕</span>)}
           </div>
         </div>
-        <div style={{ flex: 1, padding: "12px 16px", overflow: "hidden", display: "flex", flexDirection: "column", gap: 8, fontSize: 11 }}>
+        <div style={{ flex: 1, padding: "12px 16px", display: "flex", flexDirection: "column", gap: 8, fontSize: 11 }}>
           <div style={{ alignSelf: "flex-end", background: "#4f46e5", color: "white", padding: "7px 12px", borderRadius: "12px 12px 2px 12px", maxWidth: "75%" }}>
             Kaio, obrigado por fazer parte de minha rede!
           </div>
@@ -541,13 +542,11 @@ function Showcase() {
         <h2>Construa, lance e otimize.<br />Tudo em uma tela.</h2>
         <p>Editor de campanhas, caixa de respostas unificada e painel de performance — sem trocar de aba.</p>
       </div>
-
       <div className="showcase-tabs">
         {["Campanha", "Caixa de entrada", "Performance"].map((t) =>
           <button key={t} className={tab === t ? "active" : ""} onClick={() => setTab(t)}>{t}</button>
         )}
       </div>
-
       <div className="product-frame" style={{ overflow: "hidden" }}>
         <div className="bar">
           <div className="dots">
@@ -942,7 +941,7 @@ function Footer() {
       <div className="footer-inner">
         <div>
           <a className="brand" href="#">
-            <img src="uploads/VEROSS-ALESSIAFLOW-LOGO-165-x60-transp.svg" alt="AlessIA Flow" className="brand-logo" style={{ height: 28 }} />
+            <img src={window.__resources.logoTransp} alt="AlessIA Flow" className="brand-logo" style={{ height: 28 }} />
           </a>
           <p className="brand-blurb">Plataforma de prospecção no LinkedIn e e-mail com IA. Operada pela Veross Outbound Sales.</p>
         </div>
