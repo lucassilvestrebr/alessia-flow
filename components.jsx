@@ -324,6 +324,216 @@ function Features() {
 // ============================================================
 function Showcase() {
   const [tab, setTab] = useState("Campanha");
+
+  const sidebarStyle = {
+    background: "#16152a",
+    borderRight: "1px solid rgba(255,255,255,0.07)",
+    padding: "16px 12px",
+    display: "flex", flexDirection: "column", gap: 2,
+    minWidth: 200,
+  };
+  const menuItem = (label, icon, active) => (
+    <div style={{
+      display: "flex", alignItems: "center", gap: 10,
+      padding: "8px 10px", borderRadius: 8,
+      fontSize: 13, color: active ? "white" : "rgba(255,255,255,0.55)",
+      background: active ? "rgba(255,255,255,0.1)" : "transparent",
+      cursor: "pointer",
+    }}>
+      <span style={{ fontSize: 14 }}>{icon}</span>{label}
+    </div>
+  );
+
+  const Sidebar = ({ activeItem }) => (
+    <div style={sidebarStyle}>
+      <div style={{ padding: "4px 8px 14px", borderBottom: "1px solid rgba(255,255,255,0.08)", marginBottom: 8 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+          <div style={{ width: 28, height: 28, borderRadius: 8, background: "linear-gradient(135deg,#7c3aed,#4f46e5)", display: "grid", placeItems: "center", fontSize: 14 }}>🤖</div>
+          <span style={{ color: "white", fontWeight: 700, fontSize: 14, letterSpacing: "-0.01em" }}>ALESSIA<span style={{ color: "#a78bfa", fontStyle: "italic" }}>flow</span></span>
+        </div>
+        <div style={{ marginTop: 12, fontSize: 10, color: "rgba(255,255,255,0.35)", textTransform: "uppercase", letterSpacing: "0.06em" }}>LinkedIn Account</div>
+        <div style={{ display: "flex", alignItems: "center", gap: 8, marginTop: 6 }}>
+          <div style={{ width: 26, height: 26, borderRadius: "50%", background: "#4f46e5", display: "grid", placeItems: "center", color: "white", fontSize: 10, fontWeight: 700 }}>LS</div>
+          <div>
+            <div style={{ color: "white", fontSize: 11, fontWeight: 500 }}>Lucas Silvest...</div>
+            <div style={{ color: "#34d399", fontSize: 10 }}>● Connected</div>
+          </div>
+        </div>
+        <div style={{ marginTop: 6, fontSize: 10, color: "#34d399" }}>✓ Safe Mode On</div>
+      </div>
+      <div style={{ fontSize: 10, color: "rgba(255,255,255,0.3)", textTransform: "uppercase", letterSpacing: "0.06em", padding: "6px 8px" }}>Menu</div>
+      {menuItem("Dashboard", "📊", activeItem === "Dashboard")}
+      {menuItem("Campaigns", "⚡", activeItem === "Campaigns")}
+      {menuItem("Inbox", "📥", activeItem === "Inbox")}
+      {menuItem("Accounts", "👤", activeItem === "Accounts")}
+      {menuItem("Settings", "⚙️", activeItem === "Settings")}
+      {menuItem("Advanced", "🔧", activeItem === "Advanced")}
+      {menuItem("Your Clients", "🏛️", activeItem === "Your Clients")}
+    </div>
+  );
+
+  const CampaignView = () => (
+    <div style={{ flex: 1, background: "white", overflow: "hidden" }}>
+      <div style={{ padding: "16px 20px", borderBottom: "1px solid #f0f0f0", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+        <span style={{ fontSize: 15, fontWeight: 600, color: "#1a1a2e" }}>All Campaigns</span>
+        <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+          <div style={{ width: 24, height: 24, borderRadius: "50%", background: "#f0f0f0" }}></div>
+          <div style={{ width: 24, height: 24, borderRadius: "50%", background: "#4f46e5", display: "grid", placeItems: "center", color: "white", fontSize: 11, fontWeight: 700 }}>LS</div>
+        </div>
+      </div>
+      <div style={{ padding: "12px 20px", borderBottom: "1px solid #f0f0f0", display: "flex", gap: 8 }}>
+        {["Campaigns", "Prospects", "Lead list"].map((t, i) => (
+          <span key={i} style={{ padding: "6px 14px", fontSize: 12, fontWeight: 500, borderRadius: 6, color: i === 0 ? "#4f46e5" : "#888", borderBottom: i === 0 ? "2px solid #4f46e5" : "none", cursor: "pointer" }}>{t}</span>
+        ))}
+        <div style={{ marginLeft: "auto", background: "#4f46e5", color: "white", fontSize: 11, fontWeight: 600, padding: "6px 14px", borderRadius: 8, cursor: "pointer" }}>Create Campaign →</div>
+      </div>
+      <div style={{ padding: "0 20px" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 2fr 1.5fr 60px", gap: 8, padding: "10px 0", borderBottom: "1px solid #f5f5f5", fontSize: 10, color: "#aaa", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.04em" }}>
+          <span>Campaign Name</span><span>Source</span><span>Campaign Progress</span><span>Performance</span><span>Actions</span>
+        </div>
+        {[
+          { name: "260401 - SP - COMERCIAIS - SERV FINANC", src: "LinkedIn Search", p1: 100, p2: 80, accepted: 201, acceptPct: "31.90%", replied: 87, repliedPct: "43.28%", status: "Paused" },
+          { name: "260325 - VALE PARAIBA - DONOS - TECNOLOGIA", src: "CSV", p1: 100, p2: 100, accepted: 52, acceptPct: "35.13%", replied: 22, repliedPct: "42.30%", status: "Active" },
+        ].map((c, i) => (
+          <div key={i} style={{ display: "grid", gridTemplateColumns: "2fr 1fr 2fr 1.5fr 60px", gap: 8, padding: "14px 0", borderBottom: "1px solid #f5f5f5", alignItems: "center" }}>
+            <div>
+              <div style={{ fontSize: 11, fontWeight: 600, color: "#1a1a2e" }}>{c.name}</div>
+              <div style={{ fontSize: 10, color: c.status === "Active" ? "#34d399" : "#aaa", marginTop: 3 }}>{c.status} · 1 month ago</div>
+            </div>
+            <div style={{ fontSize: 11, color: "#666" }}>{c.src}</div>
+            <div style={{ display: "flex", flexDirection: "column", gap: 5 }}>
+              <div>
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 3 }}>
+                  <span style={{ fontSize: 9, background: "#34d399", color: "white", padding: "1px 6px", borderRadius: 3 }}>Contacts fetched</span>
+                  <span style={{ fontSize: 9, color: "#666" }}>{c.p1}%</span>
+                </div>
+                <div style={{ height: 4, background: "#f0f0f0", borderRadius: 2 }}><div style={{ height: "100%", width: c.p1 + "%", background: "#34d399", borderRadius: 2 }}></div></div>
+              </div>
+              <div>
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 3 }}>
+                  <span style={{ fontSize: 9, background: "#e0e0e0", color: "#555", padding: "1px 6px", borderRadius: 3 }}>Contacts enrolled</span>
+                  <span style={{ fontSize: 9, color: "#666" }}>{c.p2}%</span>
+                </div>
+                <div style={{ height: 4, background: "#f0f0f0", borderRadius: 2 }}><div style={{ height: "100%", width: c.p2 + "%", background: "#aaa", borderRadius: 2 }}></div></div>
+              </div>
+            </div>
+            <div style={{ fontSize: 10, color: "#555" }}>
+              <div>Requests Accepted: <b>{c.accepted}</b></div>
+              <div style={{ color: "#4f46e5", fontWeight: 600 }}>{c.acceptPct}</div>
+              <div>Replied Count: <b>{c.replied}</b></div>
+              <div style={{ color: "#4f46e5", fontWeight: 600 }}>{c.repliedPct}</div>
+            </div>
+            <div style={{ display: "flex", gap: 4 }}>
+              <div style={{ width: 22, height: 22, borderRadius: "50%", border: "1.5px solid #4f46e5", display: "grid", placeItems: "center", fontSize: 8, color: "#4f46e5" }}>▶</div>
+              <div style={{ width: 22, height: 22, borderRadius: "50%", background: "#f0f0f0", display: "grid", placeItems: "center", fontSize: 10 }}>…</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+
+  const InboxView = () => (
+    <div style={{ flex: 1, background: "white", display: "flex", overflow: "hidden" }}>
+      <div style={{ width: 220, borderRight: "1px solid #f0f0f0", display: "flex", flexDirection: "column" }}>
+        <div style={{ padding: "12px 14px", borderBottom: "1px solid #f0f0f0", fontSize: 13, fontWeight: 600, color: "#1a1a2e" }}>Inbox</div>
+        <div style={{ padding: "8px 14px", borderBottom: "1px solid #f5f5f5", display: "flex", gap: 4, flexWrap: "wrap" }}>
+          {["Replied", "Unread", "Paused", "Archived"].map((f, i) => (
+            <span key={i} style={{ fontSize: 10, padding: "3px 8px", borderRadius: 4, background: i === 0 ? "#4f46e5" : "#f5f5f5", color: i === 0 ? "white" : "#888", cursor: "pointer" }}>{f}</span>
+          ))}
+        </div>
+        {[
+          { name: "Renato Hiroshy Bustamante", role: "Gerente de filial @ Banco", tags: ["Follow up", "Neutral"], progress: "4/7" },
+          { name: "Kaio Oliveira", role: "Sales Specialist @ Vixtra", tags: ["Interested", "Meeting Booked"], progress: "3/7", active: true },
+          { name: "Tiago Santana Pinheiro", role: "Gerente comercial @ Banco Paulista", tags: ["Neutral", "Follow up"], progress: "2/7" },
+        ].map((c, i) => (
+          <div key={i} style={{ padding: "10px 14px", borderBottom: "1px solid #f5f5f5", borderLeft: c.active ? "3px solid #4f46e5" : "3px solid transparent", background: c.active ? "#fafafe" : "white", cursor: "pointer" }}>
+            <div style={{ display: "flex", gap: 8, alignItems: "flex-start" }}>
+              <div style={{ width: 28, height: 28, borderRadius: "50%", background: "#e0e0e0", flexShrink: 0 }}></div>
+              <div style={{ minWidth: 0 }}>
+                <div style={{ fontSize: 11, fontWeight: 600, color: "#1a1a2e" }}>{c.name}</div>
+                <div style={{ fontSize: 10, color: "#888", marginTop: 1 }}>{c.role}</div>
+                <div style={{ fontSize: 9, color: "#4f46e5", marginTop: 2 }}>Progress: {c.progress} · Replied to LinkedIn</div>
+                <div style={{ display: "flex", gap: 4, marginTop: 5, flexWrap: "wrap" }}>
+                  {c.tags.map((t, j) => <span key={j} style={{ fontSize: 9, padding: "2px 6px", borderRadius: 4, background: "#f0eeff", color: "#4f46e5" }}>{t}</span>)}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", overflow: "hidden" }}>
+        <div style={{ padding: "12px 16px", borderBottom: "1px solid #f0f0f0" }}>
+          <div style={{ fontWeight: 600, fontSize: 13, color: "#1a1a2e" }}>Kaio Oliveira</div>
+          <div style={{ fontSize: 10, color: "#888" }}>Sales Specialist (Parcerias) @ Vixtra</div>
+          <div style={{ display: "flex", gap: 6, marginTop: 8 }}>
+            {["Interested", "Meeting Booked"].map((t, i) => <span key={i} style={{ fontSize: 10, padding: "2px 8px", border: "1px solid #d0d0d0", borderRadius: 4, color: "#555" }}>{t} ✕</span>)}
+          </div>
+        </div>
+        <div style={{ flex: 1, padding: "12px 16px", overflow: "hidden", display: "flex", flexDirection: "column", gap: 8, fontSize: 11 }}>
+          <div style={{ alignSelf: "flex-end", background: "#4f46e5", color: "white", padding: "7px 12px", borderRadius: "12px 12px 2px 12px", maxWidth: "75%" }}>
+            Kaio, obrigado por fazer parte de minha rede!
+          </div>
+          <div style={{ alignSelf: "flex-end", background: "#4f46e5", color: "white", padding: "7px 12px", borderRadius: "12px 12px 2px 12px", maxWidth: "75%" }}>
+            Vamos conversar sobre a Vixtra?
+          </div>
+          <div style={{ alignSelf: "flex-start", background: "#f5f5f5", color: "#1a1a2e", padding: "7px 12px", borderRadius: "12px 12px 12px 2px", maxWidth: "75%" }}>
+            Fala, Lucas! Tudo bem?
+          </div>
+          <div style={{ alignSelf: "flex-start", background: "#f5f5f5", color: "#1a1a2e", padding: "7px 12px", borderRadius: "12px 12px 12px 2px", maxWidth: "75%" }}>
+            Vamos sim, podemos agendar um horário, se puder me sugerir 3 horários.
+          </div>
+          <div style={{ alignSelf: "flex-end", background: "#4f46e5", color: "white", padding: "7px 12px", borderRadius: "12px 12px 2px 12px", maxWidth: "90%" }}>
+            Combinado, Kaio! Terça às 14h, quarta às 11h ou quinta 15h30. Qual funciona?
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
+  const DashboardView = () => (
+    <div style={{ flex: 1, background: "white", overflow: "hidden", padding: "16px 20px" }}>
+      <div style={{ fontSize: 15, fontWeight: 600, color: "#1a1a2e", marginBottom: 14 }}>Your Analytics</div>
+      <div style={{ display: "flex", gap: 6, borderBottom: "1px solid #f0f0f0", marginBottom: 16 }}>
+        {["Performance Report", "Location Insights", "Prospect Insights"].map((t, i) => (
+          <span key={i} style={{ fontSize: 11, padding: "6px 10px", color: i === 0 ? "#4f46e5" : "#aaa", borderBottom: i === 0 ? "2px solid #4f46e5" : "none", cursor: "pointer", fontWeight: i === 0 ? 600 : 400 }}>{t}</span>
+        ))}
+      </div>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 10, marginBottom: 16 }}>
+        {[
+          { label: "Total Campaigns", value: "11", icon: "⚡", sub: "Running: 1" },
+          { label: "Prospects reached", value: "156", icon: "🎯", sub: "↑ 76%" },
+          { label: "Total Connected", value: "97", icon: "🔗", sub: "↑ 40%" },
+          { label: "LinkedIn Replies", value: "38", icon: "💬", sub: "↑ 47%" },
+        ].map((k, i) => (
+          <div key={i} style={{ background: "#fafafa", border: "1px solid #f0f0f0", borderRadius: 10, padding: "12px" }}>
+            <div style={{ fontSize: 16, marginBottom: 4 }}>{k.icon}</div>
+            <div style={{ fontSize: 10, color: "#aaa" }}>{k.label}</div>
+            <div style={{ fontSize: 22, fontWeight: 700, color: "#1a1a2e", letterSpacing: "-0.02em" }}>{k.value}</div>
+            <div style={{ fontSize: 10, color: "#4f46e5", marginTop: 2 }}>{k.sub}</div>
+          </div>
+        ))}
+      </div>
+      <div style={{ fontSize: 12, fontWeight: 600, color: "#1a1a2e", marginBottom: 8 }}>Recent Activities</div>
+      <div style={{ border: "1px solid #f0f0f0", borderRadius: 8, overflow: "hidden" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "2fr repeat(4,1fr) 1fr", fontSize: 9, color: "#aaa", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.04em", padding: "8px 12px", background: "#fafafa", borderBottom: "1px solid #f0f0f0" }}>
+          <span>Type</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Total</span>
+        </div>
+        {[
+          ["Prospects Reached", 0, 0, 0, 0, "156"],
+          ["Connected", 1, 2, 3, 2, "97"],
+          ["Connection Requests", 0, 0, 0, 0, "160"],
+          ["Replied", 0, 1, 1, 0, "38"],
+          ["Follow ups", 3, 1, 0, 0, "180"],
+        ].map((r, i) => (
+          <div key={i} style={{ display: "grid", gridTemplateColumns: "2fr repeat(4,1fr) 1fr", fontSize: 10, padding: "7px 12px", borderBottom: "1px solid #f5f5f5", color: "#555" }}>
+            {r.map((cell, j) => <span key={j} style={{ fontWeight: j === 0 ? 500 : 400 }}>{cell}</span>)}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+
   return (
     <section className="showcase">
       <div className="section-head">
@@ -334,86 +544,31 @@ function Showcase() {
 
       <div className="showcase-tabs">
         {["Campanha", "Caixa de entrada", "Performance"].map((t) =>
-        <button key={t} className={tab === t ? "active" : ""} onClick={() => setTab(t)}>{t}</button>
+          <button key={t} className={tab === t ? "active" : ""} onClick={() => setTab(t)}>{t}</button>
         )}
       </div>
 
-      <div className="product-frame">
+      <div className="product-frame" style={{ overflow: "hidden" }}>
         <div className="bar">
           <div className="dots">
             <span className="dot"></span><span className="dot"></span><span className="dot"></span>
           </div>
-          <div className="url">app.alessiaflow.com.br / campanhas / decisores-saas</div>
+          <div className="url">
+            {tab === "Campanha" && "app.alessiaflow.com.br / campaigns"}
+            {tab === "Caixa de entrada" && "app.alessiaflow.com.br / inbox"}
+            {tab === "Performance" && "app.alessiaflow.com.br / dashboard"}
+          </div>
           <span style={{ width: 60 }}></span>
         </div>
-        <div className="body">
-          <div className="sidebar">
-            <div className="group">Workspace</div>
-            <div className="item"><div className="ic"></div> Visão geral</div>
-            <div className="item active"><div className="ic"></div> Campanhas</div>
-            <div className="item"><div className="ic"></div> Leads</div>
-            <div className="item"><div className="ic"></div> Caixa unificada</div>
-            <div className="item"><div className="ic"></div> Sequências IA</div>
-            <div className="group">Operação</div>
-            <div className="item"><div className="ic"></div> Contas</div>
-            <div className="item"><div className="ic"></div> Templates</div>
-            <div className="item"><div className="ic"></div> Integrações</div>
-          </div>
-          <div className="main">
-            <h3 className="greet">Boa tarde, <span className="you">Marina</span> 👋</h3>
-            <p className="sub">Você tem 12 respostas para revisar e 3 sequências sugeridas pela IA.</p>
-            <div className="grid">
-              <div className="panel col-span-2">
-                <h6>Campanha — Decisores SaaS</h6>
-                <div style={{ display: "flex", gap: 24, alignItems: "center" }}>
-                  <div className="ring" style={{ "--p": 72 }}>
-                    <div className="ring-inner">72%</div>
-                  </div>
-                  <div className="task-list" style={{ flex: 1 }}>
-                    {[
-                    { l: "Visitar perfil", d: true, p: "100%" },
-                    { l: "Convite + nota IA", d: true, p: "82%" },
-                    { l: "Follow-up #1", d: false, p: "41%" },
-                    { l: "E-mail booster", d: false, p: "—" }].
-                    map((t, i) =>
-                    <div key={i} className={"task-item " + (t.d ? "done" : "")}>
-                        <span className="check"></span>
-                        <span className="label">{t.l}</span>
-                        <span className="pct">{t.p}</span>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
-              <div className="panel">
-                <h6>Hoje</h6>
-                <div className="timer">21:48</div>
-                <div className="timer-row">
-                  <div className="timer-btn"><I.play /></div>
-                  <span style={{ fontSize: 12, color: "var(--ink-3)", fontFamily: "var(--font-mono)" }}>convites · 48/80</span>
-                </div>
-              </div>
-              <div className="panel">
-                <h6>Aceite</h6>
-                <div style={{ fontSize: 30, fontWeight: 600, letterSpacing: "-0.02em" }}>48%</div>
-                <div style={{ fontSize: 11, color: "oklch(60% 0.15 145)", fontFamily: "var(--font-mono)" }}>+12pp / mês anterior</div>
-              </div>
-              <div className="panel">
-                <h6>Resposta</h6>
-                <div style={{ fontSize: 30, fontWeight: 600, letterSpacing: "-0.02em" }}>19%</div>
-                <div style={{ fontSize: 11, color: "oklch(60% 0.15 145)", fontFamily: "var(--font-mono)" }}>+4,2pp</div>
-              </div>
-              <div className="panel">
-                <h6>Reuniões agendadas</h6>
-                <div style={{ fontSize: 30, fontWeight: 600, letterSpacing: "-0.02em" }}>128</div>
-                <div style={{ fontSize: 11, color: "oklch(60% 0.15 145)", fontFamily: "var(--font-mono)" }}>YTD</div>
-              </div>
-            </div>
-          </div>
+        <div style={{ display: "flex", minHeight: 480 }}>
+          <Sidebar activeItem={tab === "Campanha" ? "Campaigns" : tab === "Caixa de entrada" ? "Inbox" : "Dashboard"} />
+          {tab === "Campanha" && <CampaignView />}
+          {tab === "Caixa de entrada" && <InboxView />}
+          {tab === "Performance" && <DashboardView />}
         </div>
       </div>
-    </section>);
-
+    </section>
+  );
 }
 
 // ============================================================
