@@ -20,7 +20,7 @@ tree: c47dc38ecd0e (tree hash — commit sha não resolvido)
 ├─ comparativos/       index + 19 concorrentes
 ├─ assets/css|js|img/  (img era uploads/)
 ├─ data/               comparativos-data · comparativos-data-raw · help-data
-├─ src/                fontes e bundles (Landing Page.html, components-bundle.jsx, material/)
+├─ src/                fontes e bundles (index.html, components-bundle.jsx, material/)
 └─ favicon · apple-touch-icon · robots · sitemap · manifest · vercel.json
 ```
 URLs sem `.html` via `cleanUrls`. Redirects 301: `/termos-de-uso*`, `/politica-de-*` → `/legal/…`; `/uploads/*` → `/assets/img/*`.
@@ -29,12 +29,12 @@ URLs sem `.html` via `cleanUrls`. Redirects 301: `/termos-de-uso*`, `/politica-d
 O repo guarda os artefatos de deploy: `index.html` (1,9 MB) e o `central-de-ajuda.html` de lá são bundles com CSS e fontes inline. As fontes editáveis vivem em `src/` e só existem neste projeto.
 
 ## Só no projeto (não estão no GitHub — decisão: não subir por ora)
-Landing Page.html · src/* · manifest.json · robots.txt · llms.txt · humans.txt · og-image.png · sitemap.xml completo
+index.html · src/* · manifest.json · robots.txt · llms.txt · humans.txt · og-image.png · sitemap.xml completo
 
 ## Screen map
 | Página | Arquivos-fonte |
 | --- | --- |
-| Landing | Landing Page.html + assets/js/components.jsx + assets/css/styles.css |
+| Landing | index.html + assets/js/components.jsx + assets/css/styles.css |
 | Central de Ajuda | central-de-ajuda.html + assets/css/help.css + subpages.css |
 | Comparativos (20) | comparativos/*.html + assets/css/comparativos.css + subpages.css |
 | Legais (3) | legal/*.html + assets/css/subpages.css |
