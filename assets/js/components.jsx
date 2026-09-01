@@ -788,7 +788,7 @@ function Testimonials() {
         <div className="t-card featured tall">
           <p className="quote">&ldquo;Organizou e evoluiu toda a nossa operação comercial — trouxe estrutura, previsibilidade e clareza nos processos. Acelerou execução e crescimento de uma forma que eu nunca tinha visto antes.&rdquo;</p>
           <div className="author">
-            <div className="avatar" style={{ "--h": 260 }}>GL</div>
+            <img className="avatar" src="assets/img/depoimentos/guilherme-loureiro.jpg" alt="Guilherme Loureiro" />
             <div className="who">
               <b>Guilherme Loureiro</b>
               <span>CEO · Inbotix</span>
@@ -798,7 +798,7 @@ function Testimonials() {
         <div className="t-card">
           <p className="quote">&ldquo;A automação da prospecção gerou muitas reuniões — e boa parte delas virou negócio de fato. Hoje capturo novos leads e clientes de forma autônoma.&rdquo;</p>
           <div className="author">
-            <div className="avatar" style={{ "--h": 30 }}>FG</div>
+            <img className="avatar" src="assets/img/depoimentos/fabricio-galan.jpg" alt="Fabrício Galan" />
             <div className="who">
               <b>Fabrício Galan</b>
               <span>CEO · Plataforma Empresas</span>
@@ -808,7 +808,7 @@ function Testimonials() {
         <div className="t-card">
           <p className="quote">&ldquo;Acelerou nosso processo de expansão. A busca ativa no LinkedIn ficou muito mais eficiente — alcançamos profissionais fora da nossa base e ganhamos controle real sobre a geração de oportunidades.&rdquo;</p>
           <div className="author">
-            <div className="avatar" style={{ "--h": 145 }}>SL</div>
+            <img className="avatar" src="assets/img/depoimentos/silas-lanes.jpg" alt="Sillas Lanes" />
             <div className="who">
               <b>Sillas Lanes</b>
               <span>Líder Comercial · CareOn Brasil</span>
@@ -818,7 +818,7 @@ function Testimonials() {
         <div className="t-card">
           <p className="quote">&ldquo;Estruturou o processo de pré-vendas, implementou sistemas e trouxe inteligência aplicada à operação. O impacto nos resultados foi imediato e consistente.&rdquo;</p>
           <div className="author">
-            <div className="avatar" style={{ "--h": 200 }}>CM</div>
+            <img className="avatar" src="assets/img/depoimentos/cesar-madureira.jpg" alt="César Madureira" />
             <div className="who">
               <b>César Madureira</b>
               <span>CEO · Ademicon Penha</span>
@@ -828,7 +828,7 @@ function Testimonials() {
         <div className="t-card">
           <p className="quote">&ldquo;Mudou minha forma de enxergar negócios e posicionamento. Nada vence o processo — e a Veross prova isso na prática todo dia.&rdquo;</p>
           <div className="author">
-            <div className="avatar" style={{ "--h": 80 }}>HL</div>
+            <img className="avatar" src="assets/img/depoimentos/heisemberg-lima.png" alt="Heisemberg Lima" />
             <div className="who">
               <b>Heisemberg Lima</b>
               <span>CEO · Social Play</span>
