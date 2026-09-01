@@ -1,0 +1,61 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/termos-de-uso.html",
+      "destination": "/legal/termos-de-uso",
+      "permanent": true
+    },
+    {
+      "source": "/termos-de-uso",
+      "destination": "/legal/termos-de-uso",
+      "permanent": true
+    },
+    {
+      "source": "/politica-de-privacidade.html",
+      "destination": "/legal/politica-de-privacidade",
+      "permanent": true
+    },
+    {
+      "source": "/politica-de-privacidade",
+      "destination": "/legal/politica-de-privacidade",
+      "permanent": true
+    },
+    {
+      "source": "/politica-de-cancelamento.html",
+      "destination": "/legal/politica-de-cancelamento",
+      "permanent": true
+    },
+    {
+      "source": "/politica-de-cancelamento",
+      "destination": "/legal/politica-de-cancelamento",
+      "permanent": true
+    },
+    {
+      "source": "/uploads/:file*",
+      "destination": "/assets/img/:file*",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*).html",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/html; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ]
+}

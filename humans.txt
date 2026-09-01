@@ -1,0 +1,22 @@
+/* EQUIPE */
+  Empresa: Veross Outbound Sales
+  Especialidade: Arquitetura e operações comerciais B2B
+  Contato: alessiaflow@veross.com.br
+  Telefone: +55 12 98251-9830
+  CNPJ: 47.876.266/0001-66
+  Localização: Brasil
+
+/* PLATAFORMA */
+  Nome: AlessIA Flow
+  URL: https://www.alessia.app.br
+  App: https://flow.alessia.app.br
+  Descrição: Prospecção no LinkedIn e e-mail com IA
+
+/* TECNOLOGIA */
+  HTML5, CSS3, React 18, Geist (fonte)
+  Hospedagem: cloud
+
+/* SITE */
+  Última atualização: 2026-06-08
+  Idioma: pt-BR
+  Charset: UTF-8

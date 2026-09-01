@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://www.alessia.app.br/sitemap.xml
+
+# LLMs
+LLMs: https://www.alessia.app.br/llms.txt

@@ -1,0 +1,54 @@
+# AlessIA Flow
+
+> Plataforma SaaS brasileira de prospecção outbound no LinkedIn e e-mail com IA — operada pela Veross Outbound Sales.
+
+AlessIA Flow automatiza o processo de prospecção B2B: convites personalizados no LinkedIn, mensagens com IA (texto, áudio e vídeo por lead), follow-ups automáticos e integrações com CRMs. Opera 100% em nuvem, com IPs brasileiros dedicados por perfil, sem extensão de navegador e sem risco de banimento. Suporte 100% em português.
+
+## Produto
+
+- **Landing page**: https://www.alessia.app.br
+- **App / login**: https://flow.alessia.app.br/login
+- **Registro**: https://flow.alessia.app.br/register
+- **Trial**: 14 dias gratuitos, sem cartão de crédito
+
+## Empresa
+
+- **Razão social**: Veross Outbound Sales
+- **CNPJ**: 47.876.266/0001-66
+- **Contato**: alessiaflow@veross.com.br
+- **Telefone**: +55 12 98251-9830
+- **País**: Brasil
+
+## Recursos principais
+
+- Automação de LinkedIn (convites, mensagens, InMail) e e-mail no mesmo fluxo
+- Personalização por IA: texto, áudio e vídeo gerados por perfil de cada lead
+- IPs brasileiros dedicados e exclusivos por conta
+- Multi-conta nativo com papéis e auditoria
+- Dashboards de performance (aceite, resposta, reuniões agendadas, pipeline)
+- Cadência inteligente respeitando fuso horário e limites seguros do LinkedIn
+- Integrações: HubSpot, Salesforce, Pipedrive, RD Station, Sales Navigator, Apollo, Lusha, Make, Zapier, n8n, webhooks
+
+## Planos e preços
+
+- **Starter**: trial gratuito de 14 dias (1 perfil, IP dedicado, IA texto, até 40 convites/dia)
+- **Pro**: R$ 399/mês (anual) ou R$ 599/mês (mensal) — IPs permanentes, IA texto/voz/vídeo, multi-canal, integrações, dashboards
+- **Agency ou Whitelabel**: sob consulta, a partir de 5 perfis — multi-conta, gerente dedicado, SLA customizado
+
+## Páginas do site
+
+- https://www.alessia.app.br/ — Landing page principal
+- https://www.alessia.app.br/central-de-ajuda.html — Central de Ajuda (59 artigos em 12 categorias)
+- https://www.alessia.app.br/comparativos/ — 19 comparativos vs concorrentes globais
+- https://www.alessia.app.br/comparativos/heyreach.html — AlessIA Flow vs HeyReach
+- https://www.alessia.app.br/comparativos/lemlist.html — AlessIA Flow vs Lemlist
+- https://www.alessia.app.br/comparativos/expandi.html — AlessIA Flow vs Expandi
+- https://www.alessia.app.br/comparativos/dripify.html — AlessIA Flow vs Dripify
+- https://www.alessia.app.br/comparativos/waalaxy.html — AlessIA Flow vs Waalaxy
+- https://www.alessia.app.br/termos-de-uso.html — Termos de Uso
+- https://www.alessia.app.br/politica-de-privacidade.html — Política de Privacidade
+- https://www.alessia.app.br/politica-de-cancelamento.html — Política de Cancelamento
+
+## Concorrentes substituídos com frequência
+
+HeyReach, Lemlist, Expandi, Dripify, Waalaxy, Dux-Soup, Salesflow, PhantomBuster, Meet Alfred, Octopus CRM, We-Connect, Zopto, Reply.io, Salesforge, SalesMind AI, LaGrowthMachine, Closely, Cleverly, LinkedHelper

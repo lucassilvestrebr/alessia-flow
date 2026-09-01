@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AlessIA Flow — Prospecção no LinkedIn com IA</title>
+<meta name="description" content="AlessIA Flow automatiza sua prospecção no LinkedIn e e-mail com IA — personalização por texto, voz e vídeo, IPs dedicados e suporte 100% em português. Comece grátis por 14 dias." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&family=Caveat:wght@500;600&family=League+Spartan:wght@700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<meta name="ext-resource-dependency" content="uploads/VEROSS-ALESSIAFLOW-LOGO-165-x60-transp.svg" data-resource-id="logoTransp" />
+<meta name="ext-resource-dependency" content="uploads/VEROSS-ALESSIAFLOW-SYMBOL-1000X1000-transp.svg" data-resource-id="symbolTransp" />
+<style>
+@keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }
+@keyframes float-y {
+  0%, 100% { transform: var(--t, none) translateY(0); }
+  50% { transform: var(--t, none) translateY(-6px); }
+}
+.float-note { animation: float-y 6s ease-in-out infinite; --t: rotate(-6deg); }
+.float-reminders { animation: float-y 7s ease-in-out infinite; --t: rotate(5deg); }
+.float-clock { animation: float-y 5.5s ease-in-out infinite; --t: rotate(8deg); }
+.float-check { animation: float-y 6.5s ease-in-out infinite; --t: rotate(-8deg); }
+
+/* Brand logo */
+.brand-logo { height: 32px; width: auto; display: block; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+
+/* Logos strip */
+.logos-row { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 40px; }
+.logo-item {
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0.55; filter: grayscale(1);
+  transition: opacity .2s;
+  height: 36px;
+}
+.logo-item:hover { opacity: 0.8; }
+.logo-item img { height: 36px; width: auto; max-width: 140px; object-fit: contain; }
+.logo-item.veross-text {
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: -0.03em;
+  color: oklch(20% 0.01 260);
+}
+.logo-item.plain-text {
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+  color: oklch(25% 0.01 260);
+}
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<template id="__bundler_thumbnail" data-bg-color="#f7f6f3">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#f7f6f3"/>
+    <rect x="80" y="60" width="180" height="44" rx="10" fill="#684da0" opacity=".15"/>
+    <rect x="80" y="130" width="680" height="52" rx="10" fill="#1a1a2e" opacity=".8"/>
+    <rect x="80" y="198" width="480" height="30" rx="8" fill="#1a1a2e" opacity=".25"/>
+    <rect x="80" y="256" width="200" height="48" rx="24" fill="#684da0"/>
+    <rect x="296" y="256" width="180" height="48" rx="24" fill="#fff" stroke="#e0dfd9" stroke-width="1.5"/>
+    <rect x="80" y="360" width="360" height="160" rx="18" fill="#fff" stroke="#e0dfd9" stroke-width="1.5"/>
+    <rect x="456" y="360" width="360" height="160" rx="18" fill="#fff" stroke="#e0dfd9" stroke-width="1.5"/>
+    <rect x="832" y="360" width="240" height="160" rx="18" fill="#684da0" opacity=".1" stroke="#684da0" stroke-width="1.5"/>
+  </svg>
+</template>
+<script type="text/babel" src="components-bundle.jsx"></script>
+<script type="text/babel">
+const { useState } = React;
+
+const REGISTER_URL = "https://flow.alessia.app.br/register";
+
+function App() {
+  const [demoOpen, setDemoOpen] = useState(false);
+  return (
+    <div className="app">
+      <window.Nav registerUrl={REGISTER_URL} onDemoClick={() => setDemoOpen(true)} />
+      <window.Hero registerUrl={REGISTER_URL} onDemoClick={() => setDemoOpen(true)} />
+      <window.Logos />
+      <window.Features />
+      <window.Showcase />
+      <window.HowItWorks />
+      <window.Integrations />
+      <window.ComparativosPreview />
+      <window.Testimonials />
+      <window.Pricing registerUrl={REGISTER_URL} />
+      <window.FAQ />
+      <window.CTA registerUrl={REGISTER_URL} onDemoClick={() => setDemoOpen(true)} />
+      <window.Footer />
+      <window.DemoModal open={demoOpen} onClose={() => setDemoOpen(false)} registerUrl={REGISTER_URL} />
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>
