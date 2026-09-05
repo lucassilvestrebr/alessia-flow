@@ -32,7 +32,7 @@ function Nav({ onDemoClick, registerUrl }) {
         <div className="nav-links">
           <a href="#features">Recursos</a>
           <a href="#how">Como funciona</a>
-          <a href="comparativos/index.html">Comparativos</a>
+          <a href="/comparativos">Comparativos</a>
           <a href="#pricing">Preços</a>
           <a href="central-de-ajuda.html">Ajuda</a>
         </div>
@@ -753,7 +753,7 @@ function ComparativosPreview() {
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12, marginBottom: 24 }}>
           {top.map((c) =>
-          <a key={c.slug} href={`comparativos/${c.slug}.html`} style={{ background: "var(--surface)", border: "1px solid var(--line)", borderRadius: 14, padding: "16px 18px", textDecoration: "none", color: "var(--ink)", display: "flex", justifyContent: "space-between", alignItems: "center", transition: "border-color .15s, transform .15s" }}
+          <a key={c.slug} href={`/comparativos/${c.slug}`} style={{ background: "var(--surface)", border: "1px solid var(--line)", borderRadius: 14, padding: "16px 18px", textDecoration: "none", color: "var(--ink)", display: "flex", justifyContent: "space-between", alignItems: "center", transition: "border-color .15s, transform .15s" }}
           onMouseEnter={(e) => {e.currentTarget.style.borderColor = "var(--accent)";e.currentTarget.style.transform = "translateY(-2px)";}}
           onMouseLeave={(e) => {e.currentTarget.style.borderColor = "var(--line)";e.currentTarget.style.transform = "translateY(0)";}}>
               <span style={{ display: "flex", alignItems: "center", gap: 10 }}>
@@ -765,7 +765,7 @@ function ComparativosPreview() {
           )}
         </div>
         <div style={{ textAlign: "center" }}>
-          <a href="comparativos/index.html" className="btn btn--outline btn--lg">
+          <a href="/comparativos" className="btn btn--outline btn--lg">
             Ver todos os 19 comparativos <I.arrow />
           </a>
         </div>
@@ -1041,11 +1041,11 @@ function Footer() {
         </div>
         <div className="footer-col">
           <h6>Comparativos</h6>
-          <a href="comparativos/index.html">Todos os 19</a>
-          <a href="comparativos/heyreach.html">vs HeyReach</a>
-          <a href="comparativos/lemlist.html">vs Lemlist</a>
-          <a href="comparativos/expandi.html">vs Expandi</a>
-          <a href="comparativos/dripify.html">vs Dripify</a>
+          <a href="/comparativos">Todos os 19</a>
+          <a href="/comparativos/heyreach">vs HeyReach</a>
+          <a href="/comparativos/lemlist">vs Lemlist</a>
+          <a href="/comparativos/expandi">vs Expandi</a>
+          <a href="/comparativos/dripify">vs Dripify</a>
         </div>
         <div className="footer-col">
           <h6>Suporte</h6>
